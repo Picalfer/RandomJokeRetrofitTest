@@ -5,27 +5,23 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 
 object RetrofitClient {
 
     fun getInstance(): Retrofit {
-        /*var mHttpLoggingInterceptor = HttpLoggingInterceptor()
+        val mHttpLoggingInterceptor = HttpLoggingInterceptor()
             .setLevel(HttpLoggingInterceptor.Level.BODY)
 
-        var mOkHttpClient = OkHttpClient
+        val mOkHttpClient = OkHttpClient
             .Builder()
             .addInterceptor(mHttpLoggingInterceptor)
-            .build()*/
-
-        var retrofit: Retrofit = retrofit2.Retrofit.Builder()
-            .baseUrl(BASE_URL)
-            .addConverterFactory(GsonConverterFactory.create())
-            /*.client(mOkHttpClient)  -  пока непонятно для чего этот client
-             и дичь сверху про LoggingInterceptor*/
             .build()
 
-        return retrofit
+        return Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(mOkHttpClient)
+            .build()
     }
 
 }

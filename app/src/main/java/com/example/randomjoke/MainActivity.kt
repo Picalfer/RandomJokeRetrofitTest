@@ -3,32 +3,26 @@ package com.example.randomjoke
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
-import android.widget.TextView
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import com.example.randomjoke.api.ApiInterface
 import com.example.randomjoke.api.RetrofitClient
+import com.example.randomjoke.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var txtData: TextView
-    private lateinit var newJokeBtn: Button
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
 
-        txtData = findViewById(R.id.txtData)
-        newJokeBtn = findViewById(R.id.newJoke)
+        updateJoke()
 
-        getUserList()
-        newJokeBtn.setOnClickListener {
-            getUserList()
-        }
+        binding.newJoke.setOnClickListener { updateJoke() }
     }
 
-    private fun getUserList() {
+    private fun updateJoke() {
 
         val retrofit = RetrofitClient.getInstance()
         val apiInterface = retrofit.create(ApiInterface::class.java)
@@ -37,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             try {
                 val response = apiInterface.getJoke()
                 if (response.isSuccessful) {
-                    txtData.text = response.body()?.joke.toString()
+                    binding.txtData.text = response.body()?.joke.toString()
                 } else {
                     Toast.makeText(
                         this@MainActivity,
