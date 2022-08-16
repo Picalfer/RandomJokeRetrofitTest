@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                     ).show()
                 }
             } catch (Ex: Exception) {
-                Log.e("Error", Ex.localizedMessage)
+                Log.e("Error", Ex.localizedMessage as String)
             }
         }
     }

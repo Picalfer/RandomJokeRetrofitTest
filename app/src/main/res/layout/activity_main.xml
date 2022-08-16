@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/purple_200"
+    android:background="@color/dark_green"
     tools:context=".MainActivity">
 
     <ScrollView
@@ -31,7 +31,7 @@
             android:textColor="@color/yellow"
             android:textSize="25sp"
             android:textStyle="bold"
-            tools:text="Chuck Norris and Mr. T walked into a bar. The bar was instantly destroyed, as that level of awesome cannot be contained in one building." />
+            tools:text="@string/example_joke" />
 
     </ScrollView>
 
@@ -42,6 +42,7 @@
         android:layout_marginBottom="10dp"
         android:backgroundTint="@color/black"
         android:text="@string/new_joke"
+        android:textColor="@color/yellow"
         app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="@+id/scrollView2"
         app:layout_constraintStart_toStartOf="@+id/scrollView2" />
