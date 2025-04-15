@@ -1,9 +1,9 @@
 package com.example.randomjoke
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.randomjoke.api.ApiInterface
 import com.example.randomjoke.api.RetrofitClient
@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
                 val response = apiInterface.getJoke()
                 if (response.isSuccessful) {
                     binding.txtData.text = response.body()?.joke.toString()
+                    Log.d("text_message", response.toString())
                 } else {
                     Toast.makeText(
                         this@MainActivity,
