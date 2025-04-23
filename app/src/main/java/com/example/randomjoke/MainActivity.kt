@@ -31,7 +31,7 @@ class MainActivity : AppCompatActivity() {
             try {
                 val response = apiInterface.getJoke()
                 if (response.isSuccessful) {
-                    binding.txtData.text = response.body()?.joke.toString()
+                    binding.tvJoke.text = response.body()?.joke.toString()
                     Log.d("text_message", response.toString())
                 } else {
                     Toast.makeText(

@@ -8,21 +8,18 @@
     tools:context=".MainActivity">
 
     <ScrollView
-
-        android:id="@+id/scrollView2"
+        android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/txtData"
+            android:id="@+id/tvJoke"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -31,7 +28,7 @@
             android:textColor="@color/yellow"
             android:textSize="25sp"
             android:textStyle="bold"
-            tools:text="@string/example_joke" />
+            tools:text="Здесь будет шутка" />
 
     </ScrollView>
 
@@ -43,8 +40,8 @@
         android:backgroundTint="@color/black"
         android:text="@string/new_joke"
         android:textColor="@color/yellow"
-        app:layout_constraintBottom_toBottomOf="@+id/scrollView2"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView2"
-        app:layout_constraintStart_toStartOf="@+id/scrollView2" />
+        app:layout_constraintBottom_toBottomOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="@+id/scrollView"
+        app:layout_constraintStart_toStartOf="@+id/scrollView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

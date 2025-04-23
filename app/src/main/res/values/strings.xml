@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name">Random Joke</string>
+    <string name="app_name">Шутки Everyday</string>
     <string name="new_joke">New joke</string>
-    <string name="example_joke">Chuck Norris and Mr. T walked into a bar. The bar was instantly destroyed, as that level of awesome cannot be contained in one building.</string>
 </resources>
